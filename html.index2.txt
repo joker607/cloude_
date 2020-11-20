@@ -1,5 +1,0 @@
-git start
-
-update_git
-
-finish_git
