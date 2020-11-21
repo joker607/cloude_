@@ -3,6 +3,7 @@ const saltRounds = 10
 const jwt = require('jsonwebtoken');
 const { isError } = require('util');
 
+
 const voteSchema = mongoose.Schema({
     VoteID : {
         type : String,
@@ -12,7 +13,7 @@ const voteSchema = mongoose.Schema({
     },
     
     StartDay: {
-        type : Date
+        type : String
         //require : true
     },
     EndDay : {
@@ -46,6 +47,6 @@ const voteSchema = mongoose.Schema({
     }
 })
 
-
+const Vote = mongoose.model('Vote', voteSchema)
 
 module.exports = { Vote }
