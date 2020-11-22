@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>투표 어플리케이션</h1>
+<p>투표할 질문을 선택해주세요</p>
+
+<table>
+<tr>
+<th>질문번호</th>
+<th>제목</th>
+<th>생성일</th>
+</tr>
+{# html+pydev 파일에서의 주석은 다음과 같이 괄호와 샵을 사용한다. #}
+
+{% for q in a %} {# 만약 파이썬 문법을 사용하고 싶다면 {% %}를 사용한다. #}
+{# for문의 시작 #}
+
+<tr>
+<td>{{q.id}}</td> {# 단순히 값을 표한하고 싶다면 {{ }} 을 사용한다.#}
+<td><a href="{% url 'vote:detail' q.id %}">{{q.name}}</a></td>
+<td>{{q.date}}</td>
+</tr>
+{% endfor %} {# for문의 마지막 #}
+
+</table>
+
+</body>
+</html>
