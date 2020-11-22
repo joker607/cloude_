@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express()
 const port = 5000
+var http = require('http'); 
+var fs = require('fs'); // 파일 읽기, 쓰기 등 을 할 수 있는 모듈 
+
+var router = express.Router();
+var serveStatic = require('serve-static');
+var path = require('path');
 
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -71,12 +77,7 @@ app.post('/api/users/login', (req, res) => {
 
   })
 
-
 })
-
-
-
-
 
 app.post('/api/vote', (req, res) => {
   const vote = new Vote(req.body)
@@ -89,16 +90,18 @@ app.post('/api/vote', (req, res) => {
   })
 })
 
+var router = express.Router();
 
-
-app.get("/", (req, res) => {
-
-  res.send("Hello World!, 이김팀 테스트2");
-
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + "/Front/main.html");
 });
-
-
-
+/*
+router.route('/api/vote').post(function(req,res){
+  res.sendFile(__dirname + '/Front/test.html');
+})*/
+app.get('/test', function (req, res) {
+  res.sendFile(__dirname + "/Front/test.html");
+});
 
 app.listen(port, () => {
 
