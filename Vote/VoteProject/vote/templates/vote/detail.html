@@ -8,9 +8,11 @@
 
 <h1>{{q.name}}</h1> 
 <p>{{q.date}}</p>
-<form>
+
+<form method="POST" action="{% url 'vote:result' q.id %}">{%csrf_token%}
+
 {% for c in q.choice_set.all %} 
-<input type="radio" name="a" value="{{c.id}}"> 
+<input type="radio" name="result" value="{{c.id}}"> 
 <label>{{c.name}}</label> 
 <br>
 {% endfor %}

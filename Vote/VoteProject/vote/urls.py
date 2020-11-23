@@ -6,5 +6,5 @@ urlpatterns = [
     path('', index), #해당 path에는 ''를 입력했지만 실제로는 vote/라는 뜻
     path('<int:qid>',detail, name='detail'),
     path('vote/', vote, name='vote'),
-    path('result/<int:q_id>/', result, name='result'),
+    path('<int:q_id>/result/', result, name='result'),
     ]
