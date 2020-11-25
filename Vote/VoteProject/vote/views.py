@@ -24,4 +24,3 @@ def vote(request):
 
 def result(request, q_id):
     return render(request,'vote/result.html',{'q':get_object_or_404(Question,id=q_id)})
-
