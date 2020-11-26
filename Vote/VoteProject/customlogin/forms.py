@@ -24,7 +24,4 @@ class SigninForm(ModelForm): #로그인을 제공하는 class이다.
     class Meta:
         model = User
         widgets = {'password':forms.PasswordInput}
-        field = ['username','password']
-
-
-
+        fields = ['username','password']

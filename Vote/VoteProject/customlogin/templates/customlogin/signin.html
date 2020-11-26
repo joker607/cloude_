@@ -6,19 +6,16 @@
 </head>
 <body>
 {% if error %}
-<h3 style="color:red">{{error}}</h3>
-
+<p>{{ error }}</p>
 {% endif %}
-<form action="{% url 'login:signup' %}" method="POST"> {% csrf_token %}
 
-
-
+<form action="{% url 'login:signin' %}" method="POST">
+{% csrf_token %}
 <table>
 {{ f.as_table }}
 </table>
-
-<input type="submit" value="회원가입">
-
+<input type="submit" value="로그인">
 </form>
+<a href="{% url 'login:signup' %}">회원가입</a>
 </body>
 </html>

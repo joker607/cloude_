@@ -7,6 +7,7 @@ class Question(models.Model):
     name = models.CharField(max_length = 100)
     date = models.DateTimeField()
 
+
 class Choice(models.Model):
     name = models.CharField(max_length = 100)
     votes = models.IntegerField(default = 0)
