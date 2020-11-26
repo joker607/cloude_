@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>netdream 홈페이지</h2>
+<a href="{% url 'vote:index' %}">설문조사</a>
+<hr> 
+<!-- 윗부분(고정) -->
+
+
+
+{% block content %}
+<!-- 변동부분을 block 지정해준다. -->
+{% endblock %}    
+
+
+<!--  아랫부분(고정) -->
+<hr> 
+<p>netdream blog</p>
+<p><a href=http://netdream.tistory.com/>netdream.com</a>으로 놀러오세요</p>
+
+
+</body>
+</html>

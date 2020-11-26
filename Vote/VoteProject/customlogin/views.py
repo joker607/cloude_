@@ -4,6 +4,7 @@ from django.http.response import HttpResponseRedirect
 from django.urls.base import reverse
 from django.contrib.auth.models import User #User 모델을 사용하기위해 선언해준다.
 from django.contrib.auth import login, authenticate
+from django.contrib.auth import logout #logout을 처리하기 위해 선언
 
 def signup(request):#역시 GET/POST 방식을 사용하여 구현한다.
     if request.method == "GET":
@@ -55,7 +56,7 @@ def signin(request):#로그인 기능
         else:
             return render(request, 'customlogin/signin.html',{'f':form, 'error':'아이디나 비밀번호가 일치하지 않습니다.'})
     
-from django.contrib.auth import logout #logout을 처리하기 위해 선언
+
 
 def signout(request): #logout 기능
     logout(request) #logout을 수행한다.
