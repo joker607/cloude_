@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
 <h1>{{q.name}}</h1> 
 <p>{{q.date}}</p>
-
-<form method="POST" action="{% url 'vote:result' q.id %}">{%csrf_token%}
+<form method="POST" action="{% url 'vote:vote' %}">{%csrf_token%}
 
 {% for c in q.choice_set.all %} 
-<input type="radio" name="result" value="{{c.id}}"> 
-<label>{{c.name}}</label> 
+<input type="radio" name="a" value="{{c.id}}"> 
+<label>{{c.name}}</label>
+<td><a href="{% url 'vote:result' q.id %}"></a></td>
 <br>
 {% endfor %}
 <input type="submit" value="투표하기">
 </form>
 
 
-</body>
-</html>
+
+{% endblock %}
