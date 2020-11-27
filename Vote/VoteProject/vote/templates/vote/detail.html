@@ -1,18 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{q.name}}</h1> 
-<p>{{q.date}}</p>
-<form method="POST" action="{% url 'vote:vote' %}">{%csrf_token%}
 
-{% for c in q.choice_set.all %} 
-<input type="radio" name="a" value="{{c.id}}"> 
-<label>{{c.name}}</label>
-<td><a href="{% url 'vote:result' q.id %}"></a></td>
-<br>
-{% endfor %}
-<input type="submit" value="투표하기">
-</form>
+<h1>{{q.name}}</h1> 
+        <table>
+        <tr>
+            <th><p>{{q.date}}</p></th>
+        </tr>
+
+        <tr>
+            <td>
+                <form>
+                {% for c in q.choice_set.all %} 
+                <input type="radio" name="a" value="{{c.id}}"> 
+                <label>{{c.name}}</label> 
+                <br>
+                {% endfor %}
+                </form>
+            </td>
+        </tr>
+        </table>
+        <br>
+        <div align="center">
+            <input type="submit" value="투표하기">
+        </div>
 
 
 
