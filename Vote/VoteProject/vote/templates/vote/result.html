@@ -1,18 +1,56 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Result</title>
+		
+		<style>
+			h1{background-color: lightgray; text-align: center;}
+			h2{text-align: center;}
+			ul{text-align: center;}
 
+			table {
+            width: 90%;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            margin: auto;
+            font-size: small;
+            text-align: center;
+            }
 
-	<h1>{{q.name}} 투표결과</h1>
+            th {
+				font-size: 15px;
+                border-bottom: 1px solid #444444;
+                padding: 10px;
+            }
 
-	<ul>
+            td {
+                border-bottom: 1px solid #444444;
+                padding: 10px;
+                height: 35px;
+            }
+		</style>
+	</head>
 
-		{% for c in q.choice_set.all %}
+	<body>
+		<h1>{{q.name}}</h1>
+		<h2>투표결과</h2>
 
-		<li> {{c.name}} - {{c.votes}} 표 </li>
+		<table>
+			<tr>
+				<th>항목</th> <th>투표수</th>
+			</tr>
 
-		{% endfor %}
-
-	</ul>
+			{% for c in q.choice_set.all %}
+			<tr>
+				<td>{{c.name}}</th> <td>{{c.votes}} 표</th>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+	
+</html>
 
 	
-{% endblock %}
+
+	
