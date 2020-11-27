@@ -10,6 +10,7 @@
 
         <tr>
             <td>
+<<<<<<< HEAD
                 <form method="Post" action="{%url 'vote:vote'%}"> {%csrf_token%}
                 {% for c in q.choice_set.all %} 
                 <input type="radio" name="a" value="{{c.id}}"> 
@@ -19,6 +20,15 @@
                 {% endfor %}
                 </form>
                 
+=======
+                <form>
+                {% for c in q.choice_set.all %} 
+                <input type="radio" name="a" value="{{c.id}}"> 
+                <label>{{c.name}}</label> 
+                <br>
+                {% endfor %}
+                </form>
+>>>>>>> 9cc09087a2a4f363e2ec77e0c2d25563e6931c71
             </td>
         </tr>
         </table>
