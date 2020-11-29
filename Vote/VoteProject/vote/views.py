@@ -26,6 +26,9 @@ def vote(request):
         c.save()
         return HttpResponseRedirect( reverse('vote:result',args=(c.q.id ,)  ) )
 
+
+
+
 def result(request, q_id):
     return render(request,'vote/result.html',{'q':get_object_or_404(Question,id=q_id)})
 

@@ -78,8 +78,16 @@ WSGI_APPLICATION = 'VoteProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE'   : 'django.db.backends.mysql',
+        'NAME'     : 'y_db',
+        'USER'     : 'root',
+        'PASSWORD' : 'dydrkfl1',
+        'HOST'     : '127.0.0.1',
+        'OPTIONS'  : {'charset': 'utf8mb4'},
+	'TEST': {
+	'CHARSET'  : 'utf8mb4',
+	'COLLATION': 'utf8_general_ci'
+	}
     }
 }
 
@@ -115,6 +123,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
