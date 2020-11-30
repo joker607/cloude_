@@ -7,4 +7,5 @@ urlpatterns = [
     path('<int:qid>',detail, name='detail'),
     path('vote/', vote, name='vote'),
     path('result/<int:q_id>/', result, name="result"),
+    path('blog/', blog, name="blog"),
     ]

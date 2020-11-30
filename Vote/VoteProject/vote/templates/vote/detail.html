@@ -15,12 +15,15 @@
                 {% for c in q.choice_set.all %} 
                 <input type="radio" name="a" value="{{c.id}}"> 
                 <label>{{c.name}}</label> 
-
                 <br>
+                
                 {% endfor %}
                 <input type="submit" value="투표하기">
-                </form>
                 
+                </form>
+
+                <a href="{% url 'vote:blog'%}">이력서</a>
+
             </td>
         </tr>
         
